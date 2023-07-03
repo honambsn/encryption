@@ -85,7 +85,7 @@ if __name__ == '__main__':
 
     # Mã hoá tập tin sử dụng AES
     encrypt_file_aes('D:/Ba Nam/Own project/Practice/encryption/plaintext.txt', aes_key)
-
+    
     # Giải mã tập tin sử dụng AES
     decrypt_file_aes('D:/Ba Nam/Own project/Practice/encryption/plaintext.txt.enc', aes_key)
 

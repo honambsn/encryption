@@ -102,25 +102,25 @@ def decrypt_file(encrypted_file, private_key_file, decrypted_file):
 
 
 
-# Get the current working directory
-current_directory = os.getcwd()
+# # Get the current working directory
+# current_directory = os.getcwd()
 
 
-# Generate a new RSA key pair
-private_key_path= current_directory+"\\encryption\\rsa\\private_key.pem"
-public_key_path = current_directory+"\\encryption\\rsa\\public_key.pem"
-generate_rsa_key_pair(private_key_path, public_key_path)
+# # Generate a new RSA key pair
+# private_key_path= current_directory+"\\encryption\\rsa\\private_key.pem"
+# public_key_path = current_directory+"\\encryption\\rsa\\public_key.pem"
+# generate_rsa_key_pair(private_key_path, public_key_path)
 
-# Encrypt the text file using the public key
-file_path = current_directory+"\\encryption\\plaintext.txt"
-output_path = current_directory+"\\encryption\\rsa\\encrypted_file.txt"
-encrypt_file_rsa(file_path, public_key_path, output_path)
+# # Encrypt the text file using the public key
+# file_path = current_directory+"\\encryption\\plaintext.txt"
+# output_path = current_directory+"\\encryption\\rsa\\encrypted_file.txt"
+# encrypt_file_rsa(file_path, public_key_path, output_path)
 
 
-encrypted_file = current_directory+"\\encryption\\rsa\\encrypted_file.txt"
-private_key_path = current_directory+"\\encryption\\rsa\\private_key.pem"
-decrypted_file = current_directory+"\\encryption\\rsa\\decrypted.txt"
-decrypt_file(encrypted_file, private_key_path, decrypted_file)
+# encrypted_file = current_directory+"\\encryption\\rsa\\encrypted_file.txt"
+# private_key_path = current_directory+"\\encryption\\rsa\\private_key.pem"
+# decrypted_file = current_directory+"\\encryption\\rsa\\decrypted.txt"
+# decrypt_file(encrypted_file, private_key_path, decrypted_file)
 
 
 # private_key, public_key = generate_rsa_key_pair(private_key_path,public_key_path)

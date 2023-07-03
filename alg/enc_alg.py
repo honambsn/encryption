@@ -86,32 +86,32 @@ if __name__ == '__main__':
     # Mã hoá tập tin sử dụng AES
     encrypt_file_aes('D:/Ba Nam/Own project/Practice/encryption/plaintext.txt', aes_key)
     
-    # Giải mã tập tin sử dụng AES
-    decrypt_file_aes('D:/Ba Nam/Own project/Practice/encryption/plaintext.txt.enc', aes_key)
+#     # Giải mã tập tin sử dụng AES
+#     decrypt_file_aes('D:/Ba Nam/Own project/Practice/encryption/plaintext.txt.enc', aes_key)
 
-    # Phát sinh cặp khoá RSA
-    private_key, public_key = generate_rsa_keypair()
-    print("Private Key:", private_key.decode())
-    print("Public Key:", public_key.decode())
+#     # Phát sinh cặp khoá RSA
+#     private_key, public_key = generate_rsa_keypair()
+#     print("Private Key:", private_key.decode())
+#     print("Public Key:", public_key.decode())
 
-    # Mã hoá chuỗi sử dụng khoá public RSA
+#     # Mã hoá chuỗi sử dụng khoá public RSA
     
-    rsa_key_pair = generate_rsa_key_pair()
+#     rsa_key_pair = generate_rsa_key_pair()
 
-    encrypted_string = encrypt_string_with_rsa('Hello, World!', rsa_key_pair.publickey())
+#     encrypted_string = encrypt_string_with_rsa('Hello, World!', rsa_key_pair.publickey())
 
-#    encrypted_string = encrypt_string_rsa('Hello, World!', public_key)
-    print("Encrypted String:", encrypted_string.hex())
+# #    encrypted_string = encrypt_string_rsa('Hello, World!', public_key)
+#     print("Encrypted String:", encrypted_string.hex())
 
-    # Giải mã chuỗi sử dụng khoá private RSA
-    decrypted_string = decrypt_string_with_rsa(encrypted_string, rsa_key_pair)
+#     # Giải mã chuỗi sử dụng khoá private RSA
+#     decrypted_string = decrypt_string_with_rsa(encrypted_string, rsa_key_pair)
 
-    #decrypted_string = decrypt_string_rsa(encrypted_string, private_key)
-    print("Decrypted String:", decrypted_string)
+#     #decrypted_string = decrypt_string_rsa(encrypted_string, private_key)
+#     print("Decrypted String:", decrypted_string)
 
-    # Tính giá trị hash của chuỗi
-    string = "Hello, World!"
-    sha1_hash = calculate_hash(string, algorithm='sha1')
-    sha256_hash = calculate_hash(string, algorithm='sha256')
-    print("SHA-1 Hash:", sha1_hash)
-    print("SHA-256 Hash:", sha256_hash)
+#     # Tính giá trị hash của chuỗi
+#     string = "Hello, World!"
+#     sha1_hash = calculate_hash(string, algorithm='sha1')
+#     sha256_hash = calculate_hash(string, algorithm='sha256')
+#     print("SHA-1 Hash:", sha1_hash)
+#     print("SHA-256 Hash:", sha256_hash)

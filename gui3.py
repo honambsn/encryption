@@ -120,7 +120,21 @@ def phase1():
     print(HKprivate)
     write_to_file(current_directory+"\\encryption\\"+file_name+".xml",HKprivate)
 
-    
+def phase2():
+    #select file
+    current_directory = os.getcwd()
+    file_path = filedialog.askopenfilename()
+    file_name = os.path.basename(file_path)
+    file_name = file_name.split(".", 1)[0] 
+    aes_Ks_key_name = file_name + "_ks_key.txt"
+    # print(aes_Ks_key_name)
+    #input Kprivate key
+    k_private_key =  input_phase2.get()
+    if k_private_key == '':
+        return
+    print(k_private_key)
+
+
     
     
     
@@ -130,9 +144,20 @@ def select_file():
 
 button_select_file = tk.Button(root, text="Select File", command=select_file)
 button_phase1 = tk.Button(root, text="Phase 1", command=phase1)
+button_phase2 = tk.Button(root, text="Phase 2", command=phase2)
+input_phase2 = tk.Entry(root, width=20)
 
 
+button_select_file_decryption = tk.Button(root, text="Select file to decrypt", command=select_file)
+
+# button_select_file.pack()
 button_phase1.pack()
+button_phase2.pack()
+tk.Label(root, text="Enter Kprivate key").pack()
+
+input_phase2.pack()
+# button_select_file_decryption.pack()
+
 
 # Run the GUI application
 root.mainloop()

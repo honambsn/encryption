@@ -1,9 +1,17 @@
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
+import os
+
+
+def get_file_name(file_path):
+    file_name = os.path.basename(file_path)
+    file_name = file_name.split(".", 1)[0] 
+    return file_name
 
 def generate_aes_key():
     # Generate a random 256-bit key
     key = get_random_bytes(32)
+    print("->AES key: ", key, len(key), type(key))
     return key
 
 def encrypt_file(file_path, key):
@@ -17,8 +25,11 @@ def encrypt_file(file_path, key):
     # Encrypt the plaintext
     ciphertext, tag = cipher.encrypt_and_digest(plaintext)
 
+    #export file name
+    file_name = get_file_name(file_path)
+    
     # Write the encrypted data to a new file
-    encrypted_file_path = file_path + "_aes_encrypted.enc"
+    encrypted_file_path = file_name + "_aes_encrypted.enc"
     with open(encrypted_file_path, 'wb') as file:
         [file.write(x) for x in (cipher.nonce, tag, ciphertext)]
 
@@ -34,9 +45,12 @@ def decrypt_file(file_path, key):
 
     # Decrypt the ciphertext
     plaintext = cipher.decrypt_and_verify(ciphertext, tag)
+    
+    #export file name
+    file_name = get_file_name(file_path)
 
     # Write the decrypted data to a new file
-    decrypted_file_path = file_path + "_aes_decrypted.dec"
+    decrypted_file_path = file_name + "_aes_decrypted.dec"
     with open(decrypted_file_path, 'wb') as file:
         file.write(plaintext)
 
@@ -45,12 +59,7 @@ def decrypt_file(file_path, key):
 # # Key generation
 # key = generate_aes_key()
 
-# import os 
-# current_directory = os.getcwd()
 
-# print(current_directory)
-
-# current_directory += "\\encryption\\plaintext.txt"
 # # Encryption
 # file_path = current_directory
 # encrypt_file(file_path, key)
